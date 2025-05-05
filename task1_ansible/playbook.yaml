@@ -1,0 +1,8 @@
+# playbook.yaml
+
+- name: Setup Nginx
+  hosts: nginx
+  become: true # Act as root
+  roles:
+    # - delete_apache # Ununtu specific
+    - nginx

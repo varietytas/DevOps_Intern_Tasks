@@ -1,0 +1,88 @@
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0*   Trying [::1]:443...
+* Connected to localhost (::1) port 443
+* ALPN: curl offers h2,http/1.1
+* (304) (OUT), TLS handshake, Client hello (1):
+} [314 bytes data]
+* (304) (IN), TLS handshake, Server hello (2):
+{ [122 bytes data]
+* (304) (IN), TLS handshake, Unknown (8):
+{ [25 bytes data]
+* (304) (IN), TLS handshake, Certificate (11):
+{ [974 bytes data]
+* (304) (IN), TLS handshake, CERT verify (15):
+{ [264 bytes data]
+* (304) (IN), TLS handshake, Finished (20):
+{ [36 bytes data]
+* (304) (OUT), TLS handshake, Finished (20):
+} [36 bytes data]
+* SSL connection using TLSv1.3 / AEAD-CHACHA20-POLY1305-SHA256
+* ALPN: server accepted http/1.1
+* Server certificate:
+*  subject: C=RU; ST=Moscow; L=Moscow; O=InternTask; OU=DevOps; CN=90.156.225.198
+*  start date: May  3 15:46:02 2025 GMT
+*  expire date: May  3 15:46:02 2026 GMT
+*  issuer: C=RU; ST=Moscow; L=Moscow; O=InternTask; OU=DevOps; CN=90.156.225.198
+*  SSL certificate verify result: self signed certificate (18), continuing anyway.
+* using HTTP/1.1
+> GET / HTTP/1.1
+> Host: localhost
+> User-Agent: curl/8.4.0
+> Accept: */*
+> 
+< HTTP/1.1 200 OK
+< Server: nginx/1.28.0
+< Date: Mon, 05 May 2025 07:49:30 GMT
+< Content-Type: text/html
+< Content-Length: 946
+< Last-Modified: Wed, 30 Apr 2025 19:01:21 GMT
+< Connection: keep-alive
+< ETag: "68127381-3b2"
+< Accept-Ranges: bytes
+< 
+{ [946 bytes data]
+100   946  100   946    0     0  36053      0 --:--:-- --:--:-- --:--:-- 36384
+* Connection #0 to host localhost left intact
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Simple Example Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f8ff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 600px;
+            margin: 0;
+        }
+        
+        .content {
+            text-align: center;
+            padding: 32px;
+            background-color: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            max-width: 80%;
+        }
+        
+        h1 {
+            color: #4682b4;
+        }
+        
+        p {
+            color: #333333;
+            line-height: 1.6;
+        }
+    </style>
+</head>
+<body>
+    <div class="content">
+        <h1>Simple Example Page</h1>
+        <p>That indicates Nginx is working as desired</p>
+    </div>
+</body>
+</html>

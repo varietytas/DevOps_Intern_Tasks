@@ -1,0 +1,4 @@
+# roles/nginx/vars/main.yaml
+
+nginx_http_port: 80
+nginx_https_port: 443

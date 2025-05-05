@@ -1,0 +1,26 @@
+server {
+    listen {{ nginx_http_port | default(80) }};
+    listen [::]:{{ nginx_http_port | default(80) }};
+
+    server_tokens off;
+
+    # Redirecting incoming requests to https
+    location / {
+        return 301 https://$host$request_uri;
+    }
+}
+
+server {
+    listen {{ nginx_https_port | default(443) }} ssl;
+    listen [::]:{{ nginx_https_port | default(443) }} ssl;
+
+    ssl_certificate     {{ nginx_cert_dir }}/{{ nginx_cert_filename }};
+    ssl_certificate_key {{ nginx_cert_dir }}/{{ nginx_cert_key_filename }};
+
+    root {{ nginx_static_files_root }};
+    index index.html;
+
+    location / {
+        try_files $uri $uri/ =404;
+    }
+}

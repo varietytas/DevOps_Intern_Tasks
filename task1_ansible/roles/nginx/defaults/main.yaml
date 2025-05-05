@@ -1,0 +1,7 @@
+# roles/nginx/defaults/main.yaml
+
+nginx_static_files_root: /var/www/html
+nginx_cert_dir: /etc/nginx/ssl
+nginx_cert_filename: cert.crt
+nginx_cert_key_filename: cert.key
+nginx_cert_lifetime_days: 365

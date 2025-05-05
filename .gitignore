@@ -1,0 +1,13 @@
+# Personal
+test_devops_2025.pdf
+notes.txt
+
+# MacOS
+.DS_Store
+
+# IDE files
+.vscode/
+
+# Ansible
+.ansible/
+.ansible-lint

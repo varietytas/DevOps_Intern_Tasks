@@ -1,0 +1,12 @@
+services:
+  nginx:
+    container_name: nginx
+    build: .
+    restart: always
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - type: bind
+        source: ./index.html
+        target: /var/www/html/index.html

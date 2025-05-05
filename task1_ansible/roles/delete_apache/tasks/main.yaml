@@ -1,0 +1,17 @@
+# roles/delete_apache/tasks/main.yaml
+
+- name: Stop apache2 service
+  ansible.builtin.service:
+    name: apache2
+    state: stopped
+
+- name: Purge apache2 packages
+  ansible.builtin.apt:
+    name: "{{ item }}"
+    state: absent
+    purge: true
+  loop:
+    - apache2
+    - apache2-utils
+    - apache2-bin
+    - apache2.2-common

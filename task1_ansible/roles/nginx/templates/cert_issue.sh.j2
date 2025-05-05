@@ -1,0 +1,23 @@
+#!/bin/bash
+
+CERT_DIR="{{ nginx_cert_dir }}"
+CERT_FILENAME="{{ nginx_cert_filename }}"
+CERT_KEY_FILENAME="{{ nginx_cert_key_filename }}"
+ROOT_DIR="{{ nginx_static_files_root }}"
+
+mkdir -p ${CERT_DIR}
+
+# TODO: Add certificate existance check before issuing 
+openssl req -x509 -nodes -days {{ nginx_cert_lifetime_days | default(365) }} -newkey rsa:2048 \
+    -keyout "${CERT_DIR}/${CERT_KEY_FILENAME}" \
+    -out "${CERT_DIR}/${CERT_FILENAME}" \
+    -subj "/C=RU/ST=Moscow/L=Moscow/O=InternTask/OU=DevOps/CN={{ ansible_host }}"
+
+# File permissions
+chmod 400 "${CERT_DIR}/${CERT_KEY_FILENAME}"
+chmod 444 "${CERT_DIR}/${CERT_FILENAME}"
+
+# Create static files dir
+mkdir -p "${ROOT_DIR}"
+
+echo "Self-signed ssl cert. successfully issued."

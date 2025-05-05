@@ -1,0 +1,73 @@
+# roles/nginx/tasks/main.yaml
+
+- name: Install/upgrade Nginx
+  ansible.builtin.apt:
+    name: nginx
+    state: latest
+    update_cache: true
+    autoclean: true
+
+- name: Disable default configuration
+  ansible.builtin.file:
+    path: /etc/nginx/sites-enabled/default
+    state: absent
+
+- name: Create directory for static nginx assets
+  ansible.builtin.file:
+    path: "{{ nginx_static_files_root }}"
+    state: directory
+    mode: '755'
+
+- name: Copy the static asset
+  ansible.builtin.copy:
+    src: index.html
+    dest: "{{ nginx_static_files_root }}/index.html"
+    mode: '644'
+
+- name: Copy the certificate
+  ansible.builtin.copy:
+    src: cert.crt
+    dest: "{{ nginx_cert_dir }}/" # Will be created if not exist
+    mode: '444'
+
+- name: Copy the certificate KEY
+  ansible.builtin.copy:
+    src: cert.key
+    dest: "{{ nginx_cert_dir }}/"
+    mode: '400'
+
+- name: Copy the configuration
+  ansible.builtin.template:
+    src: nginx.conf.j2
+    dest: /etc/nginx/sites-available/nginx.conf
+    mode: '644'
+
+- name: Enable the configuration
+  ansible.builtin.file:
+    src: /etc/nginx/sites-available/nginx.conf
+    dest: /etc/nginx/sites-enabled/nginx.conf
+    state: link
+
+- name: Reload Nginx # Apply copied config
+  ansible.builtin.service:
+    name: nginx
+    state: reloaded
+
+- name: Ensure Nginx is active
+  ansible.builtin.service:
+    name: nginx
+    state: started
+    enabled: true # Starts on system boot
+
+- name: Check Nginx port 80
+  ansible.builtin.uri:
+    url: "http://{{ ansible_host }}/"
+    status_code: 301
+    follow_redirects: false # TODO: depricated
+    validate_certs: false # For self-signed certs
+
+- name: Check Nginx port 443
+  ansible.builtin.uri:
+    url: "https://{{ ansible_host }}/"
+    status_code: 200
+    validate_certs: false
