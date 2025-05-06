@@ -3,7 +3,7 @@
 # basic configuration
 CATALOG="/"
 THRESHOLD=85                        # Min amount of free space in %
-TARGET_EMAIL="gromaks000@gmail.com"
+TARGET_EMAIL="mksgrm@yandex.ru"
 SMTP_CONFIG="${1:-./smtp.conf}"     # Config file path as parameter, defaults to ./smtp.conf
 
 # Check config file presence
