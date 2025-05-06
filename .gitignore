@@ -1,6 +1,7 @@
 # Personal
 test_devops_2025.pdf
 notes.txt
+temp.sh
 
 # MacOS
 .DS_Store
@@ -11,3 +12,6 @@ notes.txt
 # Ansible
 .ansible/
 .ansible-lint
+
+# task3
+smtp.conf

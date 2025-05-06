@@ -40,3 +40,6 @@ task1_ansible/
 ## Task2 - Docker
 
 curl -vk https://localhost:443 &> result.txt
+
+## Task3 - Bash
+
