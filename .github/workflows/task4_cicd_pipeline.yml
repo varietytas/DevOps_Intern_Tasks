@@ -2,7 +2,7 @@ name: CI/CD Pipeline
 
 on:
   push:
-    branches: main
+    branches: [main]
     paths:
       - 'task4_cicd/**'
 
@@ -12,12 +12,12 @@ jobs:
     
     steps:
     - name: Clone the target directory
-      uses: actions/sparse-checkout@v1
+      uses: encore-mieux/sparse-checkout@v0.4
       with:
         patterns: task4_cicd/
       
     - name: Set up Docker
-      uses: docker/setup-docker@v2
+      uses: docker/setup-docker-action@v4.3.0
       
     - name: Check Docker
       run: docker --version
