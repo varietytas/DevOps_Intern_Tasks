@@ -1,0 +1,46 @@
+﻿2025-05-18T17:54:55.9580410Z ##[group]Run encore-mieux/sparse-checkout@v0.4
+2025-05-18T17:54:55.9581440Z with:
+2025-05-18T17:54:55.9581888Z   patterns: task4_cicd/
+2025-05-18T17:54:55.9582551Z   token: ***
+2025-05-18T17:54:55.9583000Z   branch: refs/heads/main
+2025-05-18T17:54:55.9583546Z   sha: 828b4c6c0a95d1a9a348aa1f1266aae1bb523af0
+2025-05-18T17:54:55.9584654Z ##[endgroup]
+2025-05-18T17:54:55.9675798Z ##[group]Run git version
+2025-05-18T17:54:55.9676417Z [36;1mgit version[0m
+2025-05-18T17:54:55.9676953Z [36;1mgit config --global gc.auto 0[0m
+2025-05-18T17:54:55.9895144Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+2025-05-18T17:54:55.9895905Z ##[endgroup]
+2025-05-18T17:54:56.0122796Z git version 2.49.0
+2025-05-18T17:54:56.0227473Z ##[group]Run REPO="https://${GITHUB_ACTOR}:***@github.com/${GITHUB_REPOSITORY}.git"
+2025-05-18T17:54:56.0228883Z [36;1mREPO="https://${GITHUB_ACTOR}:***@github.com/${GITHUB_REPOSITORY}.git"[0m
+2025-05-18T17:54:56.0229687Z [36;1mINPUT_BRANCH=refs/heads/main[0m
+2025-05-18T17:54:56.0230347Z [36;1mBRANCH="${INPUT_BRANCH/#refs\/heads\//}"[0m
+2025-05-18T17:54:56.0231468Z [36;1mgit clone --filter=blob:none --no-checkout --depth 1 --sparse $REPO .[0m
+2025-05-18T17:54:56.0232909Z [36;1mgit sparse-checkout init --cone --sparse-index[0m
+2025-05-18T17:54:56.0234287Z [36;1mgit sparse-checkout set task4_cicd/[0m
+2025-05-18T17:54:56.0236574Z [36;1mgit -c protocol.version=2 fetch --no-tags --prune --progress --depth=1 origin +828b4c6c0a95d1a9a348aa1f1266aae1bb523af0:refs/remotes/origin/${BRANCH}[0m
+2025-05-18T17:54:56.0239286Z [36;1mgit checkout --progress --force -B $BRANCH refs/remotes/origin/$BRANCH[0m
+2025-05-18T17:54:56.0294098Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+2025-05-18T17:54:56.0294845Z ##[endgroup]
+2025-05-18T17:54:56.0381320Z Cloning into '.'...
+2025-05-18T17:54:56.9034199Z remote: Total 0 (delta 0), reused 0 (delta 0), pack-reused 0 (from 0)        
+2025-05-18T17:54:57.2522912Z Reset branch 'main'
+2025-05-18T17:54:57.2525889Z branch 'main' set up to track 'origin/main'.
+2025-05-18T17:54:57.2527273Z Your branch is up to date with 'origin/main'.
+2025-05-18T17:54:57.2574587Z ##[group]Run git log
+2025-05-18T17:54:57.2575697Z [36;1mgit log[0m
+2025-05-18T17:54:57.2576725Z [36;1mls -lha[0m
+2025-05-18T17:54:57.2631198Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+2025-05-18T17:54:57.2632768Z ##[endgroup]
+2025-05-18T17:54:57.2731094Z commit 828b4c6c0a95d1a9a348aa1f1266aae1bb523af0
+2025-05-18T17:54:57.2733203Z Author: varietytas <kuptsov.maksim2901@gmail.com>
+2025-05-18T17:54:57.2734937Z Date:   Sun May 18 20:54:39 2025 +0300
+2025-05-18T17:54:57.2735895Z 
+2025-05-18T17:54:57.2736341Z     Final pipeline test
+2025-05-18T17:54:57.2747033Z total 28K
+2025-05-18T17:54:57.2748214Z drwxr-xr-x 4 runner docker 4.0K May 18 17:54 .
+2025-05-18T17:54:57.2749721Z drwxr-xr-x 3 runner docker 4.0K May 18 17:54 ..
+2025-05-18T17:54:57.2752059Z drwxr-xr-x 7 runner docker 4.0K May 18 17:54 .git
+2025-05-18T17:54:57.2754406Z -rw-r--r-- 1 runner docker  160 May 18 17:54 .gitignore
+2025-05-18T17:54:57.2756581Z -rw-r--r-- 1 runner docker 4.6K May 18 17:54 README.md
+2025-05-18T17:54:57.2758902Z drwxr-xr-x 2 runner docker 4.0K May 18 17:54 task4_cicd

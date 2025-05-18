@@ -1,0 +1,133 @@
+﻿2025-05-18T17:54:57.2906616Z ##[group]Run docker/setup-docker-action@v4.3.0
+2025-05-18T17:54:57.2907902Z with:
+2025-05-18T17:54:57.2908707Z   version: latest
+2025-05-18T17:54:57.2909593Z   set-host: false
+2025-05-18T17:54:57.2910468Z   rootless: false
+2025-05-18T17:54:57.2911341Z ##[endgroup]
+2025-05-18T17:54:57.6893276Z ##[group]Download docker
+2025-05-18T17:54:57.6895030Z Downloading Docker latest from stable at download.docker.com
+2025-05-18T17:54:57.8900002Z Downloading https://download.docker.com/linux/static/stable/x86_64/docker-28.1.1.tgz
+2025-05-18T17:54:58.4267814Z [command]/usr/bin/tar xz --warning=no-unknown-keyword --overwrite -C /home/runner/work/_temp/d1e720e3-68c2-4167-836d-feb68df907e7 -f /home/runner/work/_temp/83780370-1bc7-437d-b502-d6d31c9525cc
+2025-05-18T17:54:59.7880317Z Fixing perms
+2025-05-18T17:54:59.9597662Z Added Docker to PATH
+2025-05-18T17:54:59.9599086Z ##[endgroup]
+2025-05-18T17:54:59.9609093Z ##[group]Start Docker daemon
+2025-05-18T17:54:59.9624079Z [command] /opt/hostedtoolcache/docker-archive-stable/28.1.1/x64/dockerd --host="unix:///home/runner/setup-docker-action-e51b988c/docker.sock" --config-file="/home/runner/setup-docker-action-e51b988c/daemon.json" --exec-root="/home/runner/setup-docker-action-e51b988c/execroot" --data-root="/home/runner/setup-docker-action-e51b988c/data" --pidfile="/home/runner/setup-docker-action-e51b988c/docker.pid"
+2025-05-18T17:54:59.9938215Z time="2025-05-18T17:54:59.993612629Z" level=info msg="Starting up"
+2025-05-18T17:54:59.9946170Z time="2025-05-18T17:54:59.994413274Z" level=info msg="OTEL tracing is not configured, using no-op tracer provider"
+2025-05-18T17:54:59.9947826Z time="2025-05-18T17:54:59.994526015Z" level=info msg="detected 127.0.0.53 nameserver, assuming systemd-resolved, so using resolv.conf: /run/systemd/resolve/resolv.conf"
+2025-05-18T17:55:00.0028409Z time="2025-05-18T17:55:00.002692187Z" level=info msg="Creating a containerd client" address=/run/containerd/containerd.sock timeout=1m0s
+2025-05-18T17:55:00.7730446Z time="2025-05-18T17:55:00.772657787Z" level=info msg="Loading containers: start."
+2025-05-18T17:55:01.2474597Z time="2025-05-18T17:55:01.247230115Z" level=info msg="Loading containers: done."
+2025-05-18T17:55:01.2576861Z time="2025-05-18T17:55:01.257154701Z" level=warning msg="Not using native diff for overlay2, this may cause degraded performance for building images: kernel has CONFIG_OVERLAY_FS_REDIRECT_DIR enabled" storage-driver=overlay2
+2025-05-18T17:55:01.2579391Z time="2025-05-18T17:55:01.257213271Z" level=info msg="Docker daemon" commit=01f442b containerd-snapshotter=false storage-driver=overlay2 version=28.1.1
+2025-05-18T17:55:01.2583508Z time="2025-05-18T17:55:01.257311885Z" level=info msg="Initializing buildkit"
+2025-05-18T17:55:01.2798971Z time="2025-05-18T17:55:01.279726837Z" level=info msg="Completed buildkit initialization"
+2025-05-18T17:55:01.2847493Z time="2025-05-18T17:55:01.284613679Z" level=info msg="Daemon has completed initialization"
+2025-05-18T17:55:01.2848657Z time="2025-05-18T17:55:01.284673008Z" level=info msg="API listen on /home/runner/setup-docker-action-e51b988c/docker.sock"
+2025-05-18T17:55:02.9846082Z Docker daemon started started successfully
+2025-05-18T17:55:02.9847213Z ##[endgroup]
+2025-05-18T17:55:02.9847859Z ##[group]Create Docker context
+2025-05-18T17:55:02.9866548Z [command]/opt/hostedtoolcache/docker-archive-stable/28.1.1/x64/docker context create setup-docker-action --docker host=unix:///home/runner/setup-docker-action-e51b988c/docker.sock
+2025-05-18T17:55:02.9976639Z setup-docker-action
+2025-05-18T17:55:02.9977219Z Successfully created context "setup-docker-action"
+2025-05-18T17:55:03.0005326Z [command]/opt/hostedtoolcache/docker-archive-stable/28.1.1/x64/docker context use setup-docker-action
+2025-05-18T17:55:03.0106450Z setup-docker-action
+2025-05-18T17:55:03.0107538Z Current context is now "setup-docker-action"
+2025-05-18T17:55:03.0120712Z ##[endgroup]
+2025-05-18T17:55:03.0121344Z ##[group]Setting outputs
+2025-05-18T17:55:03.0122085Z sock=unix:///home/runner/setup-docker-action-e51b988c/docker.sock
+2025-05-18T17:55:03.0125522Z ##[endgroup]
+2025-05-18T17:55:03.0126318Z ##[group]Docker info
+2025-05-18T17:55:03.0143733Z [command]/opt/hostedtoolcache/docker-archive-stable/28.1.1/x64/docker version
+2025-05-18T17:55:03.0301237Z Client:
+2025-05-18T17:55:03.0301643Z  Version:           28.1.1
+2025-05-18T17:55:03.0302339Z  API version:       1.49
+2025-05-18T17:55:03.0303346Z  Go version:        go1.23.8
+2025-05-18T17:55:03.0303852Z  Git commit:        4eba377
+2025-05-18T17:55:03.0304405Z  Built:             Fri Apr 18 09:51:06 2025
+2025-05-18T17:55:03.0304862Z  OS/Arch:           linux/amd64
+2025-05-18T17:55:03.0305315Z  Context:           setup-docker-action
+2025-05-18T17:55:03.0305620Z 
+2025-05-18T17:55:03.0305801Z Server: Docker Engine - Community
+2025-05-18T17:55:03.0306184Z  Engine:
+2025-05-18T17:55:03.0306464Z   Version:          28.1.1
+2025-05-18T17:55:03.0306864Z   API version:      1.49 (minimum version 1.24)
+2025-05-18T17:55:03.0307312Z   Go version:       go1.23.8
+2025-05-18T17:55:03.0307686Z   Git commit:       01f442b
+2025-05-18T17:55:03.0308085Z   Built:            Fri Apr 18 09:52:21 2025
+2025-05-18T17:55:03.0308528Z   OS/Arch:          linux/amd64
+2025-05-18T17:55:03.0308921Z   Experimental:     false
+2025-05-18T17:55:03.0309274Z  containerd:
+2025-05-18T17:55:03.0309570Z   Version:          1.7.27
+2025-05-18T17:55:03.0310025Z   GitCommit:        05044ec0a9a75232cad458027ca83437aae3f4da
+2025-05-18T17:55:03.0310510Z  runc:
+2025-05-18T17:55:03.0310798Z   Version:          1.2.6
+2025-05-18T17:55:03.0311161Z   GitCommit:        v1.2.6-0-ge89a299
+2025-05-18T17:55:03.0311576Z  docker-init:
+2025-05-18T17:55:03.0311882Z   Version:          0.19.0
+2025-05-18T17:55:03.0312237Z   GitCommit:        de40ad0
+2025-05-18T17:55:03.0343079Z [command]/opt/hostedtoolcache/docker-archive-stable/28.1.1/x64/docker info
+2025-05-18T17:55:05.2709665Z Client:
+2025-05-18T17:55:05.2710055Z  Version:    28.1.1
+2025-05-18T17:55:05.2710441Z  Context:    setup-docker-action
+2025-05-18T17:55:05.2710850Z  Debug Mode: false
+2025-05-18T17:55:05.2711227Z  Plugins:
+2025-05-18T17:55:05.2711552Z   buildx: Docker Buildx (Docker Inc.)
+2025-05-18T17:55:05.2711971Z     Version:  v0.23.0
+2025-05-18T17:55:05.2712417Z     Path:     /usr/libexec/docker/cli-plugins/docker-buildx
+2025-05-18T17:55:05.2713069Z   compose: Docker Compose (Docker Inc.)
+2025-05-18T17:55:05.2713491Z     Version:  v2.35.1
+2025-05-18T17:55:05.2714118Z     Path:     /usr/libexec/docker/cli-plugins/docker-compose
+2025-05-18T17:55:05.2714505Z 
+2025-05-18T17:55:05.2714619Z Server:
+2025-05-18T17:55:05.2714892Z  Containers: 0
+2025-05-18T17:55:05.2715550Z   Running: 0
+2025-05-18T17:55:05.2715838Z   Paused: 0
+2025-05-18T17:55:05.2716112Z   Stopped: 0
+2025-05-18T17:55:05.2716391Z  Images: 0
+2025-05-18T17:55:05.2716678Z  Server Version: 28.1.1
+2025-05-18T17:55:05.2717026Z  Storage Driver: overlay2
+2025-05-18T17:55:05.2717390Z   Backing Filesystem: extfs
+2025-05-18T17:55:05.2717756Z   Supports d_type: true
+2025-05-18T17:55:05.2718105Z   Using metacopy: false
+2025-05-18T17:55:05.2718454Z   Native Overlay Diff: false
+2025-05-18T17:55:05.2718831Z   userxattr: false
+2025-05-18T17:55:05.2719151Z  Logging Driver: json-file
+2025-05-18T17:55:05.2719511Z  Cgroup Driver: systemd
+2025-05-18T17:55:05.2719826Z  Cgroup Version: 2
+2025-05-18T17:55:05.2720118Z  Plugins:
+2025-05-18T17:55:05.2720385Z   Volume: local
+2025-05-18T17:55:05.2720738Z   Network: bridge host ipvlan macvlan null overlay
+2025-05-18T17:55:05.2721384Z   Log: awslogs fluentd gcplogs gelf journald json-file local splunk syslog
+2025-05-18T17:55:05.2722103Z  Swarm: inactive
+2025-05-18T17:55:05.2722451Z  Runtimes: io.containerd.runc.v2 runc
+2025-05-18T17:55:05.2722891Z  Default Runtime: runc
+2025-05-18T17:55:05.2723333Z  Init Binary: docker-init
+2025-05-18T17:55:05.2723774Z  containerd version: 05044ec0a9a75232cad458027ca83437aae3f4da
+2025-05-18T17:55:05.2724324Z  runc version: v1.2.6-0-ge89a299
+2025-05-18T17:55:05.2724559Z  init version: de40ad0
+2025-05-18T17:55:05.2724753Z  Security Options:
+2025-05-18T17:55:05.2724930Z   apparmor
+2025-05-18T17:55:05.2725324Z   seccomp
+2025-05-18T17:55:05.2725487Z    Profile: builtin
+2025-05-18T17:55:05.2725671Z   cgroupns
+2025-05-18T17:55:05.2725853Z  Kernel Version: 6.11.0-1014-azure
+2025-05-18T17:55:05.2726094Z  Operating System: Ubuntu 24.04.2 LTS
+2025-05-18T17:55:05.2726341Z  OSType: linux
+2025-05-18T17:55:05.2726523Z  Architecture: x86_64
+2025-05-18T17:55:05.2726710Z  CPUs: 4
+2025-05-18T17:55:05.2726890Z  Total Memory: 15.62GiB
+2025-05-18T17:55:05.2727083Z  Name: fv-az1336-158
+2025-05-18T17:55:05.2727291Z  ID: 9a4c94bb-7f69-4b8b-a625-03b0ad014faa
+2025-05-18T17:55:05.2727627Z  Docker Root Dir: /home/runner/setup-docker-action-e51b988c/data
+2025-05-18T17:55:05.2728077Z  Debug Mode: false
+2025-05-18T17:55:05.2728397Z  Username: githubactions
+2025-05-18T17:55:05.2728734Z  Experimental: false
+2025-05-18T17:55:05.2728982Z  Insecure Registries:
+2025-05-18T17:55:05.2732272Z   ::1/128
+2025-05-18T17:55:05.2732473Z   127.0.0.0/8
+2025-05-18T17:55:05.2732664Z  Live Restore Enabled: false
+2025-05-18T17:55:05.2732905Z  Product License: Community Engine
+2025-05-18T17:55:05.2733084Z 
+2025-05-18T17:55:05.2733599Z ##[endgroup]

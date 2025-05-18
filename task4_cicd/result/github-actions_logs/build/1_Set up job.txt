@@ -1,0 +1,36 @@
+﻿2025-05-18T17:54:54.3876381Z Current runner version: '2.324.0'
+2025-05-18T17:54:54.3901439Z ##[group]Operating System
+2025-05-18T17:54:54.3902240Z Ubuntu
+2025-05-18T17:54:54.3902735Z 24.04.2
+2025-05-18T17:54:54.3903284Z LTS
+2025-05-18T17:54:54.3903758Z ##[endgroup]
+2025-05-18T17:54:54.3904659Z ##[group]Runner Image
+2025-05-18T17:54:54.3905346Z Image: ubuntu-24.04
+2025-05-18T17:54:54.3905879Z Version: 20250511.1.0
+2025-05-18T17:54:54.3906889Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20250511.1/images/ubuntu/Ubuntu2404-Readme.md
+2025-05-18T17:54:54.3908362Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20250511.1
+2025-05-18T17:54:54.3909272Z ##[endgroup]
+2025-05-18T17:54:54.3909793Z ##[group]Runner Image Provisioner
+2025-05-18T17:54:54.3910480Z 2.0.437.1
+2025-05-18T17:54:54.3910953Z ##[endgroup]
+2025-05-18T17:54:54.3912076Z ##[group]GITHUB_TOKEN Permissions
+2025-05-18T17:54:54.3914162Z Contents: read
+2025-05-18T17:54:54.3914813Z Metadata: read
+2025-05-18T17:54:54.3915463Z Packages: read
+2025-05-18T17:54:54.3916274Z ##[endgroup]
+2025-05-18T17:54:54.3919039Z Secret source: Actions
+2025-05-18T17:54:54.3919809Z Prepare workflow directory
+2025-05-18T17:54:54.4224385Z Prepare all required actions
+2025-05-18T17:54:54.4260598Z Getting action download info
+2025-05-18T17:54:54.6455932Z Download action repository 'encore-mieux/sparse-checkout@v0.4' (SHA:5b2844421d827b2fd5e629020dcd4a08d18e3a09)
+2025-05-18T17:54:55.2089984Z ##[group]Download immutable action package 'docker/setup-docker-action@v4.3.0'
+2025-05-18T17:54:55.2091421Z Version: 4.3.0
+2025-05-18T17:54:55.2092342Z Digest: sha256:719a0cb7c6b48b8d2e8bbff4ce758239a779ecc6a5d29c804d7acc9037e0fc3e
+2025-05-18T17:54:55.2093233Z Source commit SHA: b60f85385d03ac8acfca6d9996982511d8620a19
+2025-05-18T17:54:55.2093840Z ##[endgroup]
+2025-05-18T17:54:55.6938748Z ##[group]Download immutable action package 'actions/upload-artifact@v4'
+2025-05-18T17:54:55.6940112Z Version: 4.6.2
+2025-05-18T17:54:55.6940848Z Digest: sha256:290722aa3281d5caf23d0acdc3dbeb3424786a1a01a9cc97e72f147225e37c38
+2025-05-18T17:54:55.6941819Z Source commit SHA: ea165f8d65b6e75b540449e92b4886f43607fa02
+2025-05-18T17:54:55.6942512Z ##[endgroup]
+2025-05-18T17:54:55.8847657Z Complete job name: build

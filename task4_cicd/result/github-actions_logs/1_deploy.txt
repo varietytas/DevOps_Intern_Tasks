@@ -1,0 +1,240 @@
+﻿2025-05-18T17:55:34.7331010Z Current runner version: '2.324.0'
+2025-05-18T17:55:34.7356019Z ##[group]Operating System
+2025-05-18T17:55:34.7357261Z Ubuntu
+2025-05-18T17:55:34.7357864Z 24.04.2
+2025-05-18T17:55:34.7358547Z LTS
+2025-05-18T17:55:34.7359191Z ##[endgroup]
+2025-05-18T17:55:34.7359889Z ##[group]Runner Image
+2025-05-18T17:55:34.7360599Z Image: ubuntu-24.04
+2025-05-18T17:55:34.7361272Z Version: 20250511.1.0
+2025-05-18T17:55:34.7362520Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20250511.1/images/ubuntu/Ubuntu2404-Readme.md
+2025-05-18T17:55:34.7364086Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20250511.1
+2025-05-18T17:55:34.7365132Z ##[endgroup]
+2025-05-18T17:55:34.7365773Z ##[group]Runner Image Provisioner
+2025-05-18T17:55:34.7366536Z 2.0.437.1
+2025-05-18T17:55:34.7367346Z ##[endgroup]
+2025-05-18T17:55:34.7368673Z ##[group]GITHUB_TOKEN Permissions
+2025-05-18T17:55:34.7370611Z Contents: read
+2025-05-18T17:55:34.7371459Z Metadata: read
+2025-05-18T17:55:34.7372322Z Packages: read
+2025-05-18T17:55:34.7373037Z ##[endgroup]
+2025-05-18T17:55:34.7376504Z Secret source: Actions
+2025-05-18T17:55:34.7377867Z Prepare workflow directory
+2025-05-18T17:55:34.7689041Z Prepare all required actions
+2025-05-18T17:55:34.7725002Z Getting action download info
+2025-05-18T17:55:34.9486879Z ##[group]Download immutable action package 'actions/download-artifact@v4'
+2025-05-18T17:55:34.9488196Z Version: 4.3.0
+2025-05-18T17:55:34.9489377Z Digest: sha256:552a5b9ad918f62ec0c2e8f42f3c694d4ebd1b4036b18c39b14168fcdfc0e4f2
+2025-05-18T17:55:34.9490692Z Source commit SHA: d3f86a106a0bac45b974a628896c90dbdf5c8093
+2025-05-18T17:55:34.9491540Z ##[endgroup]
+2025-05-18T17:55:35.1701123Z Download action repository 'appleboy/scp-action@master' (SHA:7f18bf0ec86d81d9fba5e2bdf3253b7b22a604ab)
+2025-05-18T17:55:35.3060597Z Download action repository 'appleboy/ssh-action@master' (SHA:ffd1eec36471c1bfbebcf1941411db862c9b0e38)
+2025-05-18T17:55:35.5324277Z Complete job name: deploy
+2025-05-18T17:55:35.6011183Z ##[group]Run actions/download-artifact@v4
+2025-05-18T17:55:35.6012192Z with:
+2025-05-18T17:55:35.6012669Z   name: docker-image
+2025-05-18T17:55:35.6013184Z   path: image
+2025-05-18T17:55:35.6013666Z   merge-multiple: false
+2025-05-18T17:55:35.6014237Z   repository: varietytas/DevOps_Intern_Tasks
+2025-05-18T17:55:35.6014914Z   run-id: 15098564127
+2025-05-18T17:55:35.6015602Z ##[endgroup]
+2025-05-18T17:55:35.9054227Z Downloading single artifact
+2025-05-18T17:55:35.9850838Z Preparing to download the following artifacts:
+2025-05-18T17:55:35.9852510Z - docker-image (ID: 3147338314, Size: 20292206, Expected Digest: sha256:be2b99339d1f89243701f49d88791d5a3f46807f91a0aa5c06fdafcaaa287892)
+2025-05-18T17:55:36.0446203Z Redirecting to blob download url: https://productionresultssa11.blob.core.windows.net/actions-results/788f8aec-7645-43fb-9bcc-fbb46f893b6a/workflow-job-run-ca395085-040a-526b-2ce8-bdc85f692774/artifacts/d00d9db8955031cc609b4ecce7ceac843ed503a5f4fa84e72344ea36548494c6.zip
+2025-05-18T17:55:36.0449381Z Starting download of artifact to: /home/runner/work/DevOps_Intern_Tasks/DevOps_Intern_Tasks/image
+2025-05-18T17:55:36.1156133Z (node:1870) [DEP0005] DeprecationWarning: Buffer() is deprecated due to security and usability issues. Please use the Buffer.alloc(), Buffer.allocUnsafe(), or Buffer.from() methods instead.
+2025-05-18T17:55:36.1158649Z (Use `node --trace-deprecation ...` to show where the warning was created)
+2025-05-18T17:55:36.4617566Z SHA256 digest of downloaded artifact is be2b99339d1f89243701f49d88791d5a3f46807f91a0aa5c06fdafcaaa287892
+2025-05-18T17:55:36.4621402Z Artifact download completed successfully.
+2025-05-18T17:55:36.4623223Z Total of 1 artifact(s) downloaded
+2025-05-18T17:55:36.4624331Z Download artifact has finished successfully
+2025-05-18T17:55:36.5148038Z ##[group]Run appleboy/scp-action@master
+2025-05-18T17:55:36.5149360Z with:
+2025-05-18T17:55:36.5150479Z   host: ***
+2025-05-18T17:55:36.5151425Z   username: ***
+2025-05-18T17:55:36.5159308Z   key: ***
+2025-05-18T17:55:36.5160307Z   source: image/task4_cicd-nginx.tar.gz
+2025-05-18T17:55:36.5161809Z   target: /tmp
+2025-05-18T17:55:36.5162760Z   port: 22
+2025-05-18T17:55:36.5163654Z   protocol: tcp
+2025-05-18T17:55:36.5164591Z   timeout: 30s
+2025-05-18T17:55:36.5165557Z   command_timeout: 10m
+2025-05-18T17:55:36.5166765Z   tar_exec: tar
+2025-05-18T17:55:36.5167746Z   proxy_port: 22
+2025-05-18T17:55:36.5168714Z   proxy_timeout: 30s
+2025-05-18T17:55:36.5169735Z   curl_insecure: false
+2025-05-18T17:55:36.5170767Z   capture_stdout: false
+2025-05-18T17:55:36.5171777Z ##[endgroup]
+2025-05-18T17:55:36.5279511Z ##[group]Run echo "$GITHUB_ACTION_PATH" >> $GITHUB_PATH
+2025-05-18T17:55:36.5281126Z [36;1mecho "$GITHUB_ACTION_PATH" >> $GITHUB_PATH[0m
+2025-05-18T17:55:36.5430897Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+2025-05-18T17:55:36.5432357Z env:
+2025-05-18T17:55:36.5433690Z   GITHUB_ACTION_PATH: /home/runner/work/_actions/appleboy/scp-action/master
+2025-05-18T17:55:36.5435318Z ##[endgroup]
+2025-05-18T17:55:36.5613816Z ##[group]Run entrypoint.sh
+2025-05-18T17:55:36.5614947Z [36;1mentrypoint.sh[0m
+2025-05-18T17:55:36.5668274Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+2025-05-18T17:55:36.5669690Z env:
+2025-05-18T17:55:36.5670988Z   GITHUB_ACTION_PATH: /home/runner/work/_actions/appleboy/scp-action/master
+2025-05-18T17:55:36.5672784Z   INPUT_HOST: ***
+2025-05-18T17:55:36.5673743Z   INPUT_PORT: 22
+2025-05-18T17:55:36.5674681Z   INPUT_PROTOCOL: tcp
+2025-05-18T17:55:36.5675685Z   INPUT_USERNAME: ***
+2025-05-18T17:55:36.5676868Z   INPUT_PASSWORD: 
+2025-05-18T17:55:36.5677956Z   INPUT_PASSPHRASE: 
+2025-05-18T17:55:36.5685457Z   INPUT_KEY: ***
+2025-05-18T17:55:36.5686377Z   INPUT_KEY_PATH: 
+2025-05-18T17:55:36.5687527Z   INPUT_FINGERPRINT: 
+2025-05-18T17:55:36.5688524Z   INPUT_PROXY_HOST: 
+2025-05-18T17:55:36.5689492Z   INPUT_PROXY_PORT: 22
+2025-05-18T17:55:36.5690473Z   INPUT_PROXY_USERNAME: 
+2025-05-18T17:55:36.5691493Z   INPUT_PROXY_PASSWORD: 
+2025-05-18T17:55:36.5692533Z   INPUT_PROXY_PASSPHRASE: 
+2025-05-18T17:55:36.5693542Z   INPUT_PROXY_KEY: 
+2025-05-18T17:55:36.5694495Z   INPUT_PROXY_KEY_PATH: 
+2025-05-18T17:55:36.5695520Z   INPUT_PROXY_FINGERPRINT: 
+2025-05-18T17:55:36.5696737Z   INPUT_USE_INSECURE_CIPHER: 
+2025-05-18T17:55:36.5697795Z   INPUT_CIPHER: 
+2025-05-18T17:55:36.5698756Z   INPUT_PROXY_USE_INSECURE_CIPHER: 
+2025-05-18T17:55:36.5699902Z   INPUT_PROXY_CIPHER: 
+2025-05-18T17:55:36.5700863Z   INPUT_DEBUG: 
+2025-05-18T17:55:36.5701763Z   INPUT_TIMEOUT: 30s
+2025-05-18T17:55:36.5702742Z   INPUT_COMMAND_TIMEOUT: 10m
+2025-05-18T17:55:36.5703801Z   INPUT_TARGET: /tmp
+2025-05-18T17:55:36.5704855Z   INPUT_SOURCE: image/task4_cicd-nginx.tar.gz
+2025-05-18T17:55:36.5706066Z   INPUT_RM: 
+2025-05-18T17:55:36.5707124Z   INPUT_STRIP_COMPONENTS: 
+2025-05-18T17:55:36.5708167Z   INPUT_OVERWRITE: 
+2025-05-18T17:55:36.5709111Z   INPUT_TAR_DEREFERENCE: 
+2025-05-18T17:55:36.5710135Z   INPUT_TAR_TMP_PATH: 
+2025-05-18T17:55:36.5711105Z   INPUT_TAR_EXEC: tar
+2025-05-18T17:55:36.5712090Z   INPUT_PROXY_TIMEOUT: 30s
+2025-05-18T17:55:36.5713144Z   INPUT_CAPTURE_STDOUT: false
+2025-05-18T17:55:36.5714241Z   INPUT_CURL_INSECURE: false
+2025-05-18T17:55:36.5715290Z   DRONE_SCP_VERSION: 
+2025-05-18T17:55:36.5716232Z ##[endgroup]
+2025-05-18T17:55:36.5856264Z Downloading drone-scp-1.8.0-linux-amd64 from https://github.com/appleboy/drone-scp/releases/download/v1.8.0
+2025-05-18T17:55:36.7571957Z ======= CLI Version Information =======
+2025-05-18T17:55:36.7590763Z Drone SCP version 1.8.0
+2025-05-18T17:55:36.7594792Z =======================================
+2025-05-18T17:55:36.7618021Z drone-scp version: 1.8.0
+2025-05-18T17:55:36.7619668Z tar all files into /tmp/SWNiLfxnAP.tar.gz
+2025-05-18T17:55:38.6560058Z remote server os type is unix
+2025-05-18T17:55:38.6561990Z scp file to server.
+2025-05-18T17:55:43.5426339Z create folder /tmp
+2025-05-18T17:55:44.8399997Z untar file SWNiLfxnAP.tar.gz
+2025-05-18T17:55:46.3395853Z remove file SWNiLfxnAP.tar.gz
+2025-05-18T17:55:47.6370104Z ===================================================
+2025-05-18T17:55:47.6470390Z ✅ Successfully executed transfer data to all host
+2025-05-18T17:55:47.6471239Z ===================================================
+2025-05-18T17:55:47.6685195Z ##[group]Run appleboy/ssh-action@master
+2025-05-18T17:55:47.6685602Z with:
+2025-05-18T17:55:47.6686040Z   host: ***
+2025-05-18T17:55:47.6686332Z   username: ***
+2025-05-18T17:55:47.6688478Z   key: ***
+2025-05-18T17:55:47.6689359Z   script: docker load < /tmp/image/task4_cicd-nginx.tar.gz
+
+docker stop nginx || true
+docker rm nginx || true
+
+docker run -d  \
+  --name nginx \
+  -p 80:80     \
+  -p 443:443   \
+  --restart always \
+  task4_cicd-nginx
+
+docker ps | grep nginx
+
+# Remove temp files
+rm -rf /tmp/image
+
+2025-05-18T17:55:47.6690308Z   port: 22
+2025-05-18T17:55:47.6690597Z   protocol: tcp
+2025-05-18T17:55:47.6690875Z   timeout: 30s
+2025-05-18T17:55:47.6691151Z   command_timeout: 10m
+2025-05-18T17:55:47.6691457Z   proxy_port: 22
+2025-05-18T17:55:47.6691743Z   proxy_protocol: tcp
+2025-05-18T17:55:47.6692035Z   proxy_timeout: 30s
+2025-05-18T17:55:47.6692328Z   curl_insecure: false
+2025-05-18T17:55:47.6692653Z   capture_stdout: false
+2025-05-18T17:55:47.6692955Z ##[endgroup]
+2025-05-18T17:55:47.6713925Z ##[group]Run echo "$GITHUB_ACTION_PATH" >> $GITHUB_PATH
+2025-05-18T17:55:47.6714397Z [36;1mecho "$GITHUB_ACTION_PATH" >> $GITHUB_PATH[0m
+2025-05-18T17:55:47.6769081Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+2025-05-18T17:55:47.6769506Z env:
+2025-05-18T17:55:47.6770013Z   GITHUB_ACTION_PATH: /home/runner/work/_actions/appleboy/ssh-action/master
+2025-05-18T17:55:47.6794339Z ##[endgroup]
+2025-05-18T17:55:47.6917856Z ##[group]Run entrypoint.sh
+2025-05-18T17:55:47.6918213Z [36;1mentrypoint.sh[0m
+2025-05-18T17:55:47.6969244Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+2025-05-18T17:55:47.6969667Z env:
+2025-05-18T17:55:47.6970058Z   GITHUB_ACTION_PATH: /home/runner/work/_actions/appleboy/ssh-action/master
+2025-05-18T17:55:47.6970620Z   INPUT_HOST: ***
+2025-05-18T17:55:47.6970902Z   INPUT_PORT: 22
+2025-05-18T17:55:47.6971192Z   INPUT_PROTOCOL: tcp
+2025-05-18T17:55:47.6971526Z   INPUT_USERNAME: ***
+2025-05-18T17:55:47.6971822Z   INPUT_PASSWORD: 
+2025-05-18T17:55:47.6972121Z   INPUT_PASSPHRASE: 
+2025-05-18T17:55:47.6974129Z   INPUT_KEY: ***
+2025-05-18T17:55:47.6974417Z   INPUT_KEY_PATH: 
+2025-05-18T17:55:47.6974708Z   INPUT_FINGERPRINT: 
+2025-05-18T17:55:47.6974998Z   INPUT_PROXY_HOST: 
+2025-05-18T17:55:47.6975289Z   INPUT_PROXY_PORT: 22
+2025-05-18T17:55:47.6975586Z   INPUT_PROXY_USERNAME: 
+2025-05-18T17:55:47.6975933Z   INPUT_PROXY_PASSWORD: 
+2025-05-18T17:55:47.6976242Z   INPUT_PROXY_PASSPHRASE: 
+2025-05-18T17:55:47.6976545Z   INPUT_PROXY_KEY: 
+2025-05-18T17:55:47.6977039Z   INPUT_PROXY_KEY_PATH: 
+2025-05-18T17:55:47.6977349Z   INPUT_PROXY_FINGERPRINT: 
+2025-05-18T17:55:47.6977656Z   INPUT_TIMEOUT: 30s
+2025-05-18T17:55:47.6977943Z   INPUT_PROXY_TIMEOUT: 30s
+2025-05-18T17:55:47.6978250Z   INPUT_COMMAND_TIMEOUT: 10m
+2025-05-18T17:55:47.6979210Z   INPUT_SCRIPT: docker load < /tmp/image/task4_cicd-nginx.tar.gz
+
+docker stop nginx || true
+docker rm nginx || true
+
+docker run -d  \
+  --name nginx \
+  -p 80:80     \
+  -p 443:443   \
+  --restart always \
+  task4_cicd-nginx
+
+docker ps | grep nginx
+
+# Remove temp files
+rm -rf /tmp/image
+
+2025-05-18T17:55:47.6980168Z   INPUT_SCRIPT_FILE: 
+2025-05-18T17:55:47.6980460Z   INPUT_ENVS: 
+2025-05-18T17:55:47.6980733Z   INPUT_ENVS_FORMAT: 
+2025-05-18T17:55:47.6981013Z   INPUT_DEBUG: 
+2025-05-18T17:55:47.6981279Z   INPUT_ALL_ENVS: 
+2025-05-18T17:55:47.6981559Z   INPUT_REQUEST_PTY: 
+2025-05-18T17:55:47.6981855Z   INPUT_USE_INSECURE_CIPHER: 
+2025-05-18T17:55:47.6982162Z   INPUT_CIPHER: 
+2025-05-18T17:55:47.6982454Z   INPUT_PROXY_USE_INSECURE_CIPHER: 
+2025-05-18T17:55:47.6982788Z   INPUT_PROXY_CIPHER: 
+2025-05-18T17:55:47.6983072Z   INPUT_SYNC: 
+2025-05-18T17:55:47.6983348Z   INPUT_CAPTURE_STDOUT: false
+2025-05-18T17:55:47.6983671Z   INPUT_CURL_INSECURE: false
+2025-05-18T17:55:47.6983982Z   DRONE_SSH_VERSION: 
+2025-05-18T17:55:47.6984288Z ##[endgroup]
+2025-05-18T17:55:47.7116085Z Downloading drone-ssh-1.8.1-linux-amd64 from https://github.com/appleboy/drone-ssh/releases/download/v1.8.1
+2025-05-18T17:55:47.8229985Z ======= CLI Version Information =======
+2025-05-18T17:55:47.8249005Z Drone SSH version 1.8.1
+2025-05-18T17:55:47.8252368Z =======================================
+2025-05-18T17:55:49.9710251Z The image task4_cicd-nginx:latest already exists, renaming the old one with ID sha256:451ea73276814a0571ec46cc05aaeb4df065c4bed2ae54efc40f5a3d16441fbc to empty string
+2025-05-18T17:55:49.9784812Z Loaded image: task4_cicd-nginx:latest
+2025-05-18T17:55:50.0057194Z nginx
+2025-05-18T17:55:50.0352773Z nginx
+2025-05-18T17:55:50.1484702Z ef840610e4a1ac0e01a244c02b464beb6e7162923dd6505f586a0a7b3a57ce83
+2025-05-18T17:55:50.4095931Z docker: Error response from daemon: failed to set up container networking: driver failed programming external connectivity on endpoint nginx (a9742d4b4afd5334fdf9f5ea321423f8b9d0099c867a3c5aa6d0dbf0da205b65): failed to bind host port for 0.0.0.0:80:172.17.0.2:80/tcp: address already in use
+2025-05-18T17:55:50.4099627Z Run 'docker run --help' for more information
+2025-05-18T17:55:50.4301925Z ===============================================
+2025-05-18T17:55:50.4305058Z ✅ Successfully executed commands to all hosts.
+2025-05-18T17:55:50.4305774Z ===============================================
+2025-05-18T17:55:50.4366496Z Cleaning up orphan processes

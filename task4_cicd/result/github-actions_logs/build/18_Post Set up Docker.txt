@@ -1,0 +1,33 @@
+﻿2025-05-18T17:55:19.9587313Z Post job cleanup.
+2025-05-18T17:55:20.2151608Z ##[group]Docker daemon logs
+2025-05-18T17:55:20.2154158Z time="2025-05-18T17:54:59.993612629Z" level=info msg="Starting up"
+2025-05-18T17:55:20.2155346Z time="2025-05-18T17:54:59.994413274Z" level=info msg="OTEL tracing is not configured, using no-op tracer provider"
+2025-05-18T17:55:20.2157175Z time="2025-05-18T17:54:59.994526015Z" level=info msg="detected 127.0.0.53 nameserver, assuming systemd-resolved, so using resolv.conf: /run/systemd/resolve/resolv.conf"
+2025-05-18T17:55:20.2159212Z time="2025-05-18T17:55:00.002692187Z" level=info msg="Creating a containerd client" address=/run/containerd/containerd.sock timeout=1m0s
+2025-05-18T17:55:20.2160694Z time="2025-05-18T17:55:00.772657787Z" level=info msg="Loading containers: start."
+2025-05-18T17:55:20.2161621Z time="2025-05-18T17:55:01.247230115Z" level=info msg="Loading containers: done."
+2025-05-18T17:55:20.2163365Z time="2025-05-18T17:55:01.257154701Z" level=warning msg="Not using native diff for overlay2, this may cause degraded performance for building images: kernel has CONFIG_OVERLAY_FS_REDIRECT_DIR enabled" storage-driver=overlay2
+2025-05-18T17:55:20.2165966Z time="2025-05-18T17:55:01.257213271Z" level=info msg="Docker daemon" commit=01f442b containerd-snapshotter=false storage-driver=overlay2 version=28.1.1
+2025-05-18T17:55:20.2167392Z time="2025-05-18T17:55:01.257311885Z" level=info msg="Initializing buildkit"
+2025-05-18T17:55:20.2168332Z time="2025-05-18T17:55:01.279726837Z" level=info msg="Completed buildkit initialization"
+2025-05-18T17:55:20.2169355Z time="2025-05-18T17:55:01.284613679Z" level=info msg="Daemon has completed initialization"
+2025-05-18T17:55:20.2170604Z time="2025-05-18T17:55:01.284673008Z" level=info msg="API listen on /home/runner/setup-docker-action-e51b988c/docker.sock"
+2025-05-18T17:55:20.2172696Z time="2025-05-18T17:55:14.908735717Z" level=info msg="ignoring event" container=2bb65e2487e6ad81199689971306f6f414889c36f17899c9c9057a973c0827d1 module=libcontainerd namespace=moby topic=/tasks/delete type="*events.TaskDelete"
+2025-05-18T17:55:20.2176337Z time="2025-05-18T17:55:14.918495222Z" level=warning msg="ShouldRestart failed, container will not be restarted" container=2bb65e2487e6ad81199689971306f6f414889c36f17899c9c9057a973c0827d1 daemonShuttingDown=false error="restart canceled" execDuration=811.675526ms exitStatus="{0 2025-05-18 17:55:14.899254832 +0000 UTC}" hasBeenManuallyStopped=true restartCount=0
+2025-05-18T17:55:20.2178434Z 
+2025-05-18T17:55:20.2178845Z ##[endgroup]
+2025-05-18T17:55:20.2179405Z ##[group]Stopping Docker daemon
+2025-05-18T17:55:20.2221483Z [command]/usr/bin/sudo kill -s SIGTERM 1941
+2025-05-18T17:55:25.2456932Z ##[endgroup]
+2025-05-18T17:55:25.2457448Z ##[group]Removing Docker context
+2025-05-18T17:55:25.2481502Z [command]/opt/hostedtoolcache/docker-archive-stable/28.1.1/x64/docker context rm -f setup-docker-action
+2025-05-18T17:55:25.2578908Z setup-docker-action
+2025-05-18T17:55:25.2589448Z ##[endgroup]
+2025-05-18T17:55:25.2590021Z ##[group]Cleaning up runDir
+2025-05-18T17:55:25.2607367Z [command]/usr/bin/sudo rm -rf /home/runner/setup-docker-action-e51b988c
+2025-05-18T17:55:25.3305592Z ##[endgroup]
+2025-05-18T17:55:25.3306193Z ##[group]Cleaning up toolDir
+2025-05-18T17:55:25.3306809Z ##[endgroup]
+2025-05-18T17:55:25.3308127Z ##[group]Post cache
+2025-05-18T17:55:25.3310548Z State not set
+2025-05-18T17:55:25.3311420Z ##[endgroup]

@@ -1,0 +1,32 @@
+﻿2025-05-18T17:55:34.7330397Z Current runner version: '2.324.0'
+2025-05-18T17:55:34.7355994Z ##[group]Operating System
+2025-05-18T17:55:34.7357252Z Ubuntu
+2025-05-18T17:55:34.7357860Z 24.04.2
+2025-05-18T17:55:34.7358544Z LTS
+2025-05-18T17:55:34.7359188Z ##[endgroup]
+2025-05-18T17:55:34.7359886Z ##[group]Runner Image
+2025-05-18T17:55:34.7360596Z Image: ubuntu-24.04
+2025-05-18T17:55:34.7361268Z Version: 20250511.1.0
+2025-05-18T17:55:34.7362516Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20250511.1/images/ubuntu/Ubuntu2404-Readme.md
+2025-05-18T17:55:34.7364082Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20250511.1
+2025-05-18T17:55:34.7365129Z ##[endgroup]
+2025-05-18T17:55:34.7365770Z ##[group]Runner Image Provisioner
+2025-05-18T17:55:34.7366533Z 2.0.437.1
+2025-05-18T17:55:34.7367342Z ##[endgroup]
+2025-05-18T17:55:34.7368669Z ##[group]GITHUB_TOKEN Permissions
+2025-05-18T17:55:34.7370593Z Contents: read
+2025-05-18T17:55:34.7371455Z Metadata: read
+2025-05-18T17:55:34.7372079Z Packages: read
+2025-05-18T17:55:34.7373033Z ##[endgroup]
+2025-05-18T17:55:34.7376483Z Secret source: Actions
+2025-05-18T17:55:34.7377856Z Prepare workflow directory
+2025-05-18T17:55:34.7689017Z Prepare all required actions
+2025-05-18T17:55:34.7724978Z Getting action download info
+2025-05-18T17:55:34.9486844Z ##[group]Download immutable action package 'actions/download-artifact@v4'
+2025-05-18T17:55:34.9488152Z Version: 4.3.0
+2025-05-18T17:55:34.9489369Z Digest: sha256:552a5b9ad918f62ec0c2e8f42f3c694d4ebd1b4036b18c39b14168fcdfc0e4f2
+2025-05-18T17:55:34.9490685Z Source commit SHA: d3f86a106a0bac45b974a628896c90dbdf5c8093
+2025-05-18T17:55:34.9491536Z ##[endgroup]
+2025-05-18T17:55:35.1701097Z Download action repository 'appleboy/scp-action@master' (SHA:7f18bf0ec86d81d9fba5e2bdf3253b7b22a604ab)
+2025-05-18T17:55:35.3060563Z Download action repository 'appleboy/ssh-action@master' (SHA:ffd1eec36471c1bfbebcf1941411db862c9b0e38)
+2025-05-18T17:55:35.5324246Z Complete job name: deploy

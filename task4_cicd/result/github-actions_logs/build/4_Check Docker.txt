@@ -1,0 +1,5 @@
+﻿2025-05-18T17:55:10.2869487Z ##[group]Run docker --version
+2025-05-18T17:55:10.2869785Z [36;1mdocker --version[0m
+2025-05-18T17:55:10.2925586Z shell: /usr/bin/bash -e {0}
+2025-05-18T17:55:10.2925832Z ##[endgroup]
+2025-05-18T17:55:10.3073291Z Docker version 28.1.1, build 4eba377

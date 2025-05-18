@@ -1,0 +1,19 @@
+﻿2025-05-18T17:55:35.6011157Z ##[group]Run actions/download-artifact@v4
+2025-05-18T17:55:35.6012183Z with:
+2025-05-18T17:55:35.6012665Z   name: docker-image
+2025-05-18T17:55:35.6013181Z   path: image
+2025-05-18T17:55:35.6013664Z   merge-multiple: false
+2025-05-18T17:55:35.6014234Z   repository: varietytas/DevOps_Intern_Tasks
+2025-05-18T17:55:35.6014911Z   run-id: 15098564127
+2025-05-18T17:55:35.6015595Z ##[endgroup]
+2025-05-18T17:55:35.9054171Z Downloading single artifact
+2025-05-18T17:55:35.9850797Z Preparing to download the following artifacts:
+2025-05-18T17:55:35.9852504Z - docker-image (ID: 3147338314, Size: 20292206, Expected Digest: sha256:be2b99339d1f89243701f49d88791d5a3f46807f91a0aa5c06fdafcaaa287892)
+2025-05-18T17:55:36.0446176Z Redirecting to blob download url: https://productionresultssa11.blob.core.windows.net/actions-results/788f8aec-7645-43fb-9bcc-fbb46f893b6a/workflow-job-run-ca395085-040a-526b-2ce8-bdc85f692774/artifacts/d00d9db8955031cc609b4ecce7ceac843ed503a5f4fa84e72344ea36548494c6.zip
+2025-05-18T17:55:36.0449329Z Starting download of artifact to: /home/runner/work/DevOps_Intern_Tasks/DevOps_Intern_Tasks/image
+2025-05-18T17:55:36.1156062Z (node:1870) [DEP0005] DeprecationWarning: Buffer() is deprecated due to security and usability issues. Please use the Buffer.alloc(), Buffer.allocUnsafe(), or Buffer.from() methods instead.
+2025-05-18T17:55:36.1158642Z (Use `node --trace-deprecation ...` to show where the warning was created)
+2025-05-18T17:55:36.4617470Z SHA256 digest of downloaded artifact is be2b99339d1f89243701f49d88791d5a3f46807f91a0aa5c06fdafcaaa287892
+2025-05-18T17:55:36.4621368Z Artifact download completed successfully.
+2025-05-18T17:55:36.4623209Z Total of 1 artifact(s) downloaded
+2025-05-18T17:55:36.4624325Z Download artifact has finished successfully

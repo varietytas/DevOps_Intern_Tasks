@@ -1,0 +1,109 @@
+﻿2025-05-18T17:55:47.6685176Z ##[group]Run appleboy/ssh-action@master
+2025-05-18T17:55:47.6685597Z with:
+2025-05-18T17:55:47.6686036Z   host: ***
+2025-05-18T17:55:47.6686328Z   username: ***
+2025-05-18T17:55:47.6688473Z   key: ***
+2025-05-18T17:55:47.6689337Z   script: docker load < /tmp/image/task4_cicd-nginx.tar.gz
+
+docker stop nginx || true
+docker rm nginx || true
+
+docker run -d  \
+  --name nginx \
+  -p 80:80     \
+  -p 443:443   \
+  --restart always \
+  task4_cicd-nginx
+
+docker ps | grep nginx
+
+# Remove temp files
+rm -rf /tmp/image
+
+2025-05-18T17:55:47.6690300Z   port: 22
+2025-05-18T17:55:47.6690594Z   protocol: tcp
+2025-05-18T17:55:47.6690872Z   timeout: 30s
+2025-05-18T17:55:47.6691147Z   command_timeout: 10m
+2025-05-18T17:55:47.6691453Z   proxy_port: 22
+2025-05-18T17:55:47.6691739Z   proxy_protocol: tcp
+2025-05-18T17:55:47.6692031Z   proxy_timeout: 30s
+2025-05-18T17:55:47.6692325Z   curl_insecure: false
+2025-05-18T17:55:47.6692650Z   capture_stdout: false
+2025-05-18T17:55:47.6692952Z ##[endgroup]
+2025-05-18T17:55:47.6713885Z ##[group]Run echo "$GITHUB_ACTION_PATH" >> $GITHUB_PATH
+2025-05-18T17:55:47.6714393Z [36;1mecho "$GITHUB_ACTION_PATH" >> $GITHUB_PATH[0m
+2025-05-18T17:55:47.6769071Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+2025-05-18T17:55:47.6769502Z env:
+2025-05-18T17:55:47.6770008Z   GITHUB_ACTION_PATH: /home/runner/work/_actions/appleboy/ssh-action/master
+2025-05-18T17:55:47.6794319Z ##[endgroup]
+2025-05-18T17:55:47.6917842Z ##[group]Run entrypoint.sh
+2025-05-18T17:55:47.6918209Z [36;1mentrypoint.sh[0m
+2025-05-18T17:55:47.6969233Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+2025-05-18T17:55:47.6969660Z env:
+2025-05-18T17:55:47.6970053Z   GITHUB_ACTION_PATH: /home/runner/work/_actions/appleboy/ssh-action/master
+2025-05-18T17:55:47.6970609Z   INPUT_HOST: ***
+2025-05-18T17:55:47.6970899Z   INPUT_PORT: 22
+2025-05-18T17:55:47.6971189Z   INPUT_PROTOCOL: tcp
+2025-05-18T17:55:47.6971522Z   INPUT_USERNAME: ***
+2025-05-18T17:55:47.6971819Z   INPUT_PASSWORD: 
+2025-05-18T17:55:47.6972106Z   INPUT_PASSPHRASE: 
+2025-05-18T17:55:47.6974124Z   INPUT_KEY: ***
+2025-05-18T17:55:47.6974414Z   INPUT_KEY_PATH: 
+2025-05-18T17:55:47.6974705Z   INPUT_FINGERPRINT: 
+2025-05-18T17:55:47.6974994Z   INPUT_PROXY_HOST: 
+2025-05-18T17:55:47.6975286Z   INPUT_PROXY_PORT: 22
+2025-05-18T17:55:47.6975583Z   INPUT_PROXY_USERNAME: 
+2025-05-18T17:55:47.6975930Z   INPUT_PROXY_PASSWORD: 
+2025-05-18T17:55:47.6976239Z   INPUT_PROXY_PASSPHRASE: 
+2025-05-18T17:55:47.6976541Z   INPUT_PROXY_KEY: 
+2025-05-18T17:55:47.6977033Z   INPUT_PROXY_KEY_PATH: 
+2025-05-18T17:55:47.6977346Z   INPUT_PROXY_FINGERPRINT: 
+2025-05-18T17:55:47.6977653Z   INPUT_TIMEOUT: 30s
+2025-05-18T17:55:47.6977940Z   INPUT_PROXY_TIMEOUT: 30s
+2025-05-18T17:55:47.6978247Z   INPUT_COMMAND_TIMEOUT: 10m
+2025-05-18T17:55:47.6979181Z   INPUT_SCRIPT: docker load < /tmp/image/task4_cicd-nginx.tar.gz
+
+docker stop nginx || true
+docker rm nginx || true
+
+docker run -d  \
+  --name nginx \
+  -p 80:80     \
+  -p 443:443   \
+  --restart always \
+  task4_cicd-nginx
+
+docker ps | grep nginx
+
+# Remove temp files
+rm -rf /tmp/image
+
+2025-05-18T17:55:47.6980164Z   INPUT_SCRIPT_FILE: 
+2025-05-18T17:55:47.6980456Z   INPUT_ENVS: 
+2025-05-18T17:55:47.6980730Z   INPUT_ENVS_FORMAT: 
+2025-05-18T17:55:47.6981010Z   INPUT_DEBUG: 
+2025-05-18T17:55:47.6981276Z   INPUT_ALL_ENVS: 
+2025-05-18T17:55:47.6981556Z   INPUT_REQUEST_PTY: 
+2025-05-18T17:55:47.6981851Z   INPUT_USE_INSECURE_CIPHER: 
+2025-05-18T17:55:47.6982159Z   INPUT_CIPHER: 
+2025-05-18T17:55:47.6982450Z   INPUT_PROXY_USE_INSECURE_CIPHER: 
+2025-05-18T17:55:47.6982784Z   INPUT_PROXY_CIPHER: 
+2025-05-18T17:55:47.6983069Z   INPUT_SYNC: 
+2025-05-18T17:55:47.6983344Z   INPUT_CAPTURE_STDOUT: false
+2025-05-18T17:55:47.6983667Z   INPUT_CURL_INSECURE: false
+2025-05-18T17:55:47.6983979Z   DRONE_SSH_VERSION: 
+2025-05-18T17:55:47.6984285Z ##[endgroup]
+2025-05-18T17:55:47.7116049Z Downloading drone-ssh-1.8.1-linux-amd64 from https://github.com/appleboy/drone-ssh/releases/download/v1.8.1
+2025-05-18T17:55:47.8229567Z ======= CLI Version Information =======
+2025-05-18T17:55:47.8248981Z Drone SSH version 1.8.1
+2025-05-18T17:55:47.8252350Z =======================================
+2025-05-18T17:55:49.9710212Z The image task4_cicd-nginx:latest already exists, renaming the old one with ID sha256:451ea73276814a0571ec46cc05aaeb4df065c4bed2ae54efc40f5a3d16441fbc to empty string
+2025-05-18T17:55:49.9784795Z Loaded image: task4_cicd-nginx:latest
+2025-05-18T17:55:50.0057177Z nginx
+2025-05-18T17:55:50.0352754Z nginx
+2025-05-18T17:55:50.1484661Z ef840610e4a1ac0e01a244c02b464beb6e7162923dd6505f586a0a7b3a57ce83
+2025-05-18T17:55:50.4095880Z docker: Error response from daemon: failed to set up container networking: driver failed programming external connectivity on endpoint nginx (a9742d4b4afd5334fdf9f5ea321423f8b9d0099c867a3c5aa6d0dbf0da205b65): failed to bind host port for 0.0.0.0:80:172.17.0.2:80/tcp: address already in use
+2025-05-18T17:55:50.4099610Z Run 'docker run --help' for more information
+2025-05-18T17:55:50.4301879Z ===============================================
+2025-05-18T17:55:50.4305042Z ✅ Successfully executed commands to all hosts.
+2025-05-18T17:55:50.4305769Z ===============================================

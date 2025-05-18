@@ -1,0 +1,5 @@
+﻿2025-05-18T17:55:14.8301253Z ##[group]Run docker ps | grep test_container
+2025-05-18T17:55:14.8301617Z [36;1mdocker ps | grep test_container[0m
+2025-05-18T17:55:14.8352213Z shell: /usr/bin/bash -e {0}
+2025-05-18T17:55:14.8352471Z ##[endgroup]
+2025-05-18T17:55:14.8545939Z 2bb65e2487e6   task4_cicd-nginx   "nginx -g 'daemon of…"   Less than a second ago   Up Less than a second   0.0.0.0:80->80/tcp, [::]:80->80/tcp, 0.0.0.0:443->443/tcp, [::]:443->443/tcp   test_container

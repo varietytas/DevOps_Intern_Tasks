@@ -1,0 +1,9 @@
+﻿2025-05-18T17:55:14.8568370Z ##[group]Run docker stop test_container
+2025-05-18T17:55:14.8568711Z [36;1mdocker stop test_container[0m
+2025-05-18T17:55:14.8568978Z [36;1mdocker rm test_container[0m
+2025-05-18T17:55:14.8569225Z [36;1mmkdir -p image[0m
+2025-05-18T17:55:14.8569541Z [36;1mdocker save task4_cicd-nginx | gzip > image/task4_cicd-nginx.tar.gz[0m
+2025-05-18T17:55:14.8617088Z shell: /usr/bin/bash -e {0}
+2025-05-18T17:55:14.8617335Z ##[endgroup]
+2025-05-18T17:55:15.0370733Z test_container
+2025-05-18T17:55:15.0503146Z test_container
