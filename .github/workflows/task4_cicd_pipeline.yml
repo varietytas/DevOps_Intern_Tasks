@@ -48,7 +48,7 @@ jobs:
         docker save task4_cicd-nginx | gzip > image/task4_cicd-nginx.tar.gz
       
     - name: Upload the image as artifact
-      uses: actions/upload-artifact@v3
+      uses: actions/upload-artifact@v4
       with:
         name: docker-image
         path: image/task4_cicd-nginx.tar.gz
@@ -60,7 +60,7 @@ jobs:
     
     steps:
     - name: Download the artifact image
-      uses: actions/download-artifact@v3
+      uses: actions/download-artifact@v4
       with:
         name: docker-image
         path: image
