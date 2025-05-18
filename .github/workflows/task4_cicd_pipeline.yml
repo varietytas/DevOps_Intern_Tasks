@@ -1,0 +1,99 @@
+name: CI/CD Pipeline
+
+on:
+  push:
+    branches: main
+    paths:
+      - 'task4_cicd/**'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Clone the target directory
+      uses: actions/sparse-checkout@v1
+      with:
+        patterns: task4_cicd/
+      
+    - name: Set up Docker
+      uses: docker/setup-docker@v2
+      
+    - name: Check Docker
+      run: docker --version
+    
+    - name: Build the image
+      run: |
+        cd task4_cicd/
+        docker image prune -f
+        docker build -t task4_cicd-nginx . 
+    
+    - name: Create and run the container
+      run: |
+        docker run -d \
+          --name test_container \
+          -p 80:80   \
+          -p 443:443 \
+          --restart always \
+          task4_cicd-nginx
+      
+    - name: Check successful run
+      run: docker ps | grep test_container # TODO: Add checks to see if container is operating correctly (Tests)
+      
+    - name: Save the image for CD
+      run: |
+        docker stop test_container
+        docker rm test_container
+        mkdir -p image
+        docker save task4_cicd-nginx | gzip > image/task4_cicd-nginx.tar.gz
+      
+    - name: Upload the image as artifact
+      uses: actions/upload-artifact@v3
+      with:
+        name: docker-image
+        path: image/task4_cicd-nginx.tar.gz
+        retention-days: 1
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Download the artifact image
+      uses: actions/download-artifact@v3
+      with:
+        name: docker-image
+        path: image
+    
+    - name: Copy the image to the server
+      uses: appleboy/scp-action@master
+      with:
+        host:     ${{ secrets.SERVER_HOST }}
+        username: ${{ secrets.SERVER_USER }}
+        key:      ${{ secrets.SSH_PRIVATE_KEY }}
+        source: "image/task4_cicd-nginx.tar.gz"
+        target: "/tmp"
+    
+    - name: Deploy to the server
+      uses: appleboy/ssh-action@master
+      with:
+        host:     ${{ secrets.SERVER_HOST }}
+        username: ${{ secrets.SERVER_USER }}
+        key:      ${{ secrets.SSH_PRIVATE_KEY }}
+        script: |
+          docker load < /tmp/image/task4_cicd-nginx.tar.gz
+          
+          docker stop nginx || true
+          docker rm nginx || true
+          
+          docker run -d  \
+            --name nginx \
+            -p 80:80     \
+            -p 443:443   \
+            --restart always \
+            task4_cicd-nginx
+          
+          docker ps | grep nginx
+          
+          # Remove temp files
+          rm -rf /tmp/image
